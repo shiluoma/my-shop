@@ -13,7 +13,7 @@ class Nav extends Component {
   }
 
   render() {
-    const { title, border } = this.props;
+    const { title, border, showLeft } = this.props;
     return (
       <header
         className="nav-bar"
@@ -28,10 +28,10 @@ class Nav extends Component {
       >
         <NavBar
           mode="light"
-          icon={<Icon type="left" />}
+          icon={showLeft ? <Icon type="left" /> : ''}
           onLeftClick={this.handlePageBack.bind(this)}
         >
-          {title || '我的商城'}
+          {title}
         </NavBar>
       </header>
     );

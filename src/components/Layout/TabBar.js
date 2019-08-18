@@ -10,15 +10,13 @@ const Item = TabBar.Item;
 const tabs = [
   {
     title: '商品',
-    name: 'goods',
     url: `${staticPath}/tabbar/home.png`,
-    as: { pathname: '/list' },
+    pathname: '/',
     activeUrl: `${staticPath}/tabbar/home_sel.png`
   },
   {
     title: '购物车',
-    name: 'cart',
-    as: { pathname: '/cart' },
+    pathname: '/cart',
     url: `${staticPath}/tabbar/buycar.png`,
     activeUrl: `${staticPath}/tabbar/buycar_sel.png`
   }
@@ -35,7 +33,11 @@ class TabBars extends Component {
   }
 
   render() {
-    let { tabActive } = this.props;
+    const {
+      history: {
+        location: { pathname }
+      }
+    } = this.props;
     return (
       <footer className="tabBar">
         <TabBar
@@ -58,7 +60,7 @@ class TabBars extends Component {
                     }}
                   />
                 }
-                selected={tabActive == tab.name}
+                selected={pathname === tab.pathname}
                 selectedIcon={
                   <div
                     style={{
