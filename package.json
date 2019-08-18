@@ -20,11 +20,15 @@
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-loader": "2.2.1",
+    "eslint-plugin-compat": "^3.3.0",
     "eslint-plugin-flowtype": "3.13.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
     "file-loader": "3.0.1",
@@ -47,6 +51,7 @@
     "postcss-normalize": "7.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
+    "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-app-polyfill": "^1.0.2",
     "react-dev-utils": "^9.0.3",
@@ -72,10 +77,13 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "test": "node scripts/test.js",
+    "lint:style": "stylelint \"./**/*.less\" --syntax less",
+    "lint": "eslint --ext .js pages components && npm run lint:style",
+    "lint:fix": "eslint --fix --ext .js src mock tests && npm run lint:style",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext.js",
+    "precommit": "lint-staged"
   },
   "browserslist": {
     "production": [
@@ -135,6 +143,13 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+        "prettier --tab-width 4 --write",
+        "eslint --fix",
+        "git add"
     ]
   },
   "babel": {
