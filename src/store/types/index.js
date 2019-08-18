@@ -1,3 +1,1 @@
-export * from "./user";
-export * from "./resume";
-export * from "./common";
+export const GET_GOODSLIST = 'GET_GOODSLIST';

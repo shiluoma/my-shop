@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from 'react';
 
-export default (params) => {
+export default params => {
   return (
     <div
       className="LoadModal"
@@ -14,7 +14,5 @@ export default (params) => {
         <div className="double-bounce2" />
       </div>
     </div>
-  )
-}
-
-
+  );
+};

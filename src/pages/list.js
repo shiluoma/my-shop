@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import '../styles/pages/list.less';
 import MyLayout from '../components/layout/MyLayout';
 import GoodsCard from '../components/GoodCard';
+import { getGoodsList } from '../store/actions';
+
+let actions = { getGoodsList };
 
 class GoodsList extends Component {
   constructor(props) {
@@ -23,9 +28,22 @@ class GoodsList extends Component {
   }
 }
 
+const mapStateToProps = function(state, ownProps) {
+  return {
+    goodsList: state.goods.goodsList
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch)
+});
+
 const navBarOptions = {
   title: '寻找宝贝',
   border: true
 };
 
-export default MyLayout(GoodsList, navBarOptions);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyLayout(GoodsList, navBarOptions));
