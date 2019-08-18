@@ -1,14 +1,15 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import React, { Component } from "react";
-import NotFound from "../pages/404";
-export default class RoutePages extends Component{
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import NotFound from '../pages/404';
+
+export default class RoutePages extends Component {
   render() {
-    return(
+    return (
       <BrowserRouter>
         <Switch>
-			    <Route component={NotFound}></Route>
+          <Route component={NotFound}></Route>
         </Switch>
       </BrowserRouter>
-    )
+    );
   }
 }

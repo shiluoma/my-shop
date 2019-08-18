@@ -27,7 +27,7 @@ export default function user(state = initState, action) {
 				let type = action.payload.type;
 				let editUserInfo = state.editUserInfo;
 				editUserInfo[type] = action.payload.data;
-				return { ...state, editUserInfo: Object.assign({}, editUserInfo) };
+				return { ...state, editUserInfo: {...editUserInfo} };
 			}
 		case SAVE_USER_INFO:
 			return  {...state, userInfo: action.payload};

@@ -3,29 +3,38 @@ import { NavBar, Icon } from "antd-mobile";
 import { withRouter } from "react-router-dom";
 
 class Nav extends Component {
-
   handlePageBack() {
-    const { leftClick } = this.props;
-    if (leftClick && typeof(leftClick) === 'function'){
+    const { leftClick, history } = this.props;
+    if (leftClick && typeof leftClick === "function") {
       leftClick();
     } else {
-      this.props.history.goBack();
+      history.goBack();
     }
   }
 
   render() {
-	  const { title, border } = this.props;
-    return(
-	  <div 
-		  className="nav-bar" 
-			style={{ position: "fixed", top: 0, left: 0, width: "100%", borderBottom: `1px solid ${border ? "#EAECF3" : "transparent"}`, zIndex: 10}}>
+    const { title, border } = this.props;
+    return (
+      <div
+        className="nav-bar"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          borderBottom: `1px solid ${border ? "#EAECF3" : "transparent"}`,
+          zIndex: 10
+        }}
+      >
         <NavBar
-		      mode="light"
+          mode="light"
           icon={<Icon type="left" />}
           onLeftClick={this.handlePageBack.bind(this)}
-        >{title || "我的商城"}</NavBar>
+        >
+          {title || "我的商城"}
+        </NavBar>
       </div>
-    )
+    );
   }
 }
 
