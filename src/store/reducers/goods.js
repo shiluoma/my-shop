@@ -1,7 +1,10 @@
-import { GET_GOODSLIST } from '../types';
+import { GET_GOODSLIST, SET_GETTING } from '../types';
 
 const initState = {
-  goodsList: []
+  currentPage: 0,
+  goodsList: [],
+  isAll: false,
+  isGetting: false
 };
 
 export default function resume(state = initState, action) {
@@ -9,7 +12,14 @@ export default function resume(state = initState, action) {
     case GET_GOODSLIST:
       return {
         ...state,
-        goodsList: action.payload
+        currentPage: action.payload.currentPage,
+        goodsList: action.payload.goodsList,
+        isAll: action.payload.isAll
+      };
+    case SET_GETTING:
+      return {
+        ...state,
+        isGetting: action.payload
       };
     default:
       return state;

@@ -55,6 +55,7 @@
     "no-console": [0],
     "no-bitwise": [0],
     "no-unused-vars": [0],
+    "no-undef": [0],
     "no-cond-assign": [0],
     "import/no-unresolved": [0],
     "comma-dangle": ["error", {
