@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import reducer from "./store/reducers";
 import "./styles/base.less"
 import RoutePages from "./router";
-import * as serviceWorker from './serviceWorker';
+  import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(thunk),
