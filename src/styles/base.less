@@ -1,0 +1,71 @@
+body, html {
+  height: 100%;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, del, em, img, strong, dd, dl, dt, li, ol, ul, form, label {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+button:active {
+  opacity: 0.8;
+}
+button:disabled {
+   background-color: #D6D9DD!important;
+}
+a:active {
+  background-color: #eeeeee61;
+}
+
+html {
+    font-size: 13.33333vw;
+}
+body {
+    font-family: "Microsoft Yahei", "Droid Sans Fallback", "Arial", "Helvetica", "sans-serif", "宋体";
+    font-size: 16px; /* 修正字体大小 */
+    /* 防止页面过宽 */
+    margin: auto;
+    padding: 45px 0 0 0;
+    box-sizing: border-box;
+    background-color: #fff!important;
+}
+
+#root {
+  height: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) {
+    body {font-size: 16px;}
+}
+@media screen and (min-width: 481px) and (max-width:640px) {
+    body {font-size: 18px;}
+}
+@media screen and (min-width: 641px) {
+    body {font-size: 20px;}
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+
+
+
+
+

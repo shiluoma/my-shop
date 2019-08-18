@@ -1,0 +1,2 @@
+export const SAVE_EDIT_USERINFO = "SAVE_EDIT_USERINFO";
+export const SAVE_USER_INFO = "SAVE_USER_INFO";
