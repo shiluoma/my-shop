@@ -14,6 +14,13 @@ class GoodsList extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    const {
+      actions: { getGoodsList }
+    } = this.props;
+    getGoodsList();
+  }
+
   render() {
     const { goodsListdata } = this.props;
     return (

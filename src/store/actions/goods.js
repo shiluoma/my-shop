@@ -9,6 +9,7 @@ export const getGoodsList = auth => (dispatch, getState) => {
       .get(requestUrl.getGoodsList)
       .then(res => {
         console.log(111111111, res);
+        dispatch({});
       })
       .catch(err => {
         reject(err);
