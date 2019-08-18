@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { NavBar, Icon } from "antd-mobile";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { NavBar, Icon } from 'antd-mobile';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends Component {
   handlePageBack() {
     const { leftClick, history } = this.props;
-    if (leftClick && typeof leftClick === "function") {
+    if (leftClick && typeof leftClick === 'function') {
       leftClick();
     } else {
       history.goBack();
@@ -15,14 +15,14 @@ class Nav extends Component {
   render() {
     const { title, border } = this.props;
     return (
-      <div
+      <header
         className="nav-bar"
         style={{
-          position: "fixed",
+          position: 'fixed',
           top: 0,
           left: 0,
-          width: "100%",
-          borderBottom: `1px solid ${border ? "#EAECF3" : "transparent"}`,
+          width: '100%',
+          borderBottom: `1px solid ${border ? '#EAECF3' : 'transparent'}`,
           zIndex: 10
         }}
       >
@@ -31,9 +31,9 @@ class Nav extends Component {
           icon={<Icon type="left" />}
           onLeftClick={this.handlePageBack.bind(this)}
         >
-          {title || "我的商城"}
+          {title || '我的商城'}
         </NavBar>
-      </div>
+      </header>
     );
   }
 }
