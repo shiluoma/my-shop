@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/pages/notfound.less";
+import NavBar from "../components/Layout/NavBar";
+
 const staticPath = process.env.STATIC_PATH;
 
 class NotFound extends Component {
@@ -13,6 +15,7 @@ class NotFound extends Component {
 	render() {
 		return (
 			<div className="errorWrap">
+				<NavBar />
 				<div className="errorContent">
 					<div>
 						<img src={staticPath + "/404.png"} alt="简历超人" />

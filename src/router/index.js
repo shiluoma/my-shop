@@ -6,7 +6,7 @@ export default class RoutePages extends Component{
     return(
       <BrowserRouter>
         <Switch>
-			<Route component={NotFound}></Route>
+			    <Route component={NotFound}></Route>
         </Switch>
       </BrowserRouter>
     )
